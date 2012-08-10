@@ -1,0 +1,11 @@
+;Numerical operations module
+;Copyright 2012 James Otten <james_otten@lavabit.com>
+
+(module james-numerical racket
+  (provide sum-of-digits)
+
+  ;Returns the sum of the digits of n
+  (define (sum-of-digits n)
+    (if (= n 0) 0
+        (+ (modulo n 10) (sum-of-digits (/ (- n (modulo n 10)) 10)))))
+)  

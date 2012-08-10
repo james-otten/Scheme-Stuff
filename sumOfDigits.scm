@@ -2,9 +2,9 @@
 ;Copyright 2012 James Otten <james_otten@lavabit.com>
 
 ;Returns the sum of the digits of n
-(define (sum-of-digits n)
-  (if (= n 0) 0
-      (+ (modulo n 10) (sum-of-digits (/ (- n (modulo n 10)) 10)))))
+;(define (sum-of-digits n)
+;  (if (= n 0) 0
+;      (+ (modulo n 10) (sum-of-digits (/ (- n (modulo n 10)) 10)))))
 
 ;Returns b^e for positive e
 (define (pow b e)
@@ -15,6 +15,7 @@
 
 ;Unit test
 (require "modules/unit-test.rtk")
+(require "modules/james-numerical.rtk")
 (assert (= 50 (sum-of-digits '9182376455)) "sum-of-digits failed")
 (assert (= 32768 (pow 2 15)) "pow failed")
 (assert (= 26 (sum-of-digits (pow 2 15))) "combination of sum-of-digits and pow failed")
