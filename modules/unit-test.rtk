@@ -1,0 +1,15 @@
+;Unit test module
+;Copyright 2012 James Otten <james_otten@lavabit.com>
+
+(module unit-test racket
+(provide assert)
+(provide error)
+
+(define (assert bool msg)
+  (if (not bool) (error msg) #t))
+
+(define (error msg)
+  (display msg)
+  (newline)
+  (exit 1)))
+  
