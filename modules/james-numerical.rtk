@@ -4,6 +4,7 @@
 (module james-numerical racket
   (provide sum-of-digits)
   (provide pow)
+  (provide factorial)
 
   ;Returns the sum of the digits of n
   (define (sum-of-digits n)
@@ -16,4 +17,10 @@
       (if (= e 0) acc
           (pow-iter b (- e 1) (* b acc))))
     (pow-iter b e 1))
+
+  ;The factorial function
+  (define (factorial n)
+    (define (fact-iter n product)
+      (if (= n 0) product (fact-iter (- n 1) (* product n))))
+    (fact-iter n 1))
 )  
