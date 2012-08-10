@@ -3,9 +3,17 @@
 
 (module james-numerical racket
   (provide sum-of-digits)
+  (provide pow)
 
   ;Returns the sum of the digits of n
   (define (sum-of-digits n)
     (if (= n 0) 0
         (+ (modulo n 10) (sum-of-digits (/ (- n (modulo n 10)) 10)))))
+
+  ;Returns b^e for positive e
+  (define (pow b e)
+    (define (pow-iter b e acc)
+      (if (= e 0) acc
+          (pow-iter b (- e 1) (* b acc))))
+    (pow-iter b e 1))
 )  
