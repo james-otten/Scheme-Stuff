@@ -8,6 +8,7 @@ Random creations in scheme.
 * euler6.scm - Difference between square of sum and sum of squares
 * sumOfDigits.scm - Sum of digits (Euler 16 and 20), uses unit-test.rtk, james-numerical.rtk
 * unitTestTest - Tests unit-test.rtk
+* fibonacci.scm - Find the first term in the Fibonacci sequence with 1000 digits (Euler 25)
 
 ####Modules
 * unit-test.rtk - Provides basic unit testing support

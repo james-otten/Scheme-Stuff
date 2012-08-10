@@ -5,6 +5,8 @@
   (provide sum-of-digits)
   (provide pow)
   (provide factorial)
+  (provide fib)
+  (provide fibonacci-greater-equal-to)
 
   ;Returns the sum of the digits of n
   (define (sum-of-digits n)
@@ -23,4 +25,20 @@
     (define (fact-iter n product)
       (if (= n 0) product (fact-iter (- n 1) (* product n))))
     (fact-iter n 1))
+
+  ;Fibonacci number
+  (define (fib n)
+    (if (< n 2) n
+                (+ (fib (- n 1)) (fib (- n 2)))))
+
+  ;Return format: (term_index number)
+  (define (fibonacci-greater-equal-to max)
+    (define (fge-iter-fast max n val last)
+      (if (or (> val max) (= val max)) (list n val)
+                                       (fge-iter-fast max (+ 1 n) (+ val last) val)))
+    (define (fge-iter max n val) ;First solution, very slow for big numbers
+      (if (or (> val max) (= val max)) (list n val)
+                                       (fge-iter max (+ 1 n) (fib (+ 1 n)))))
+    (fge-iter-fast max 2 1 1))
+    ;(fge-iter max 1 1))
 )  
