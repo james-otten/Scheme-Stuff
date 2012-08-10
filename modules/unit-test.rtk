@@ -4,10 +4,21 @@
 (module unit-test racket
 (provide assert)
 (provide error)
+(provide do-tests)
 
+;Do list of assertions
+;ut: list of form: ((test msg)...)
+(define (do-tests ut)
+  (if (null? ut) #t 
+                 (begin (assert (caar ut) (cadar ut))
+                         (do-tests (cdr ut)))))
+
+
+;Prints msg and exits if bool evaluates to false
 (define (assert bool msg)
   (if (not bool) (error msg) #t))
 
+;Errors out with msg
 (define (error msg)
   (display msg)
   (newline)
