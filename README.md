@@ -9,6 +9,7 @@ Random creations in scheme.
 * sumOfDigits.scm - Sum of digits (Euler 16 and 20), uses unit-test.rtk, james-numerical.rtk
 * unitTestTest - Tests unit-test.rtk
 * fibonacci.scm - Find the first term in the Fibonacci sequence with 1000 digits (Euler 25)
+* euler48.scm - Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000 (Euler 48)
 
 ####Modules
 * unit-test.rtk - Provides basic unit testing support
